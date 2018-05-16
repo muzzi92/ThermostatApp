@@ -61,11 +61,15 @@ $( document ).ready(function() {
       UsageColour();
     })
 
-    $.get("http://api.openweathermap.org/data/2.5/weather?id=2643743&APPID=e4ab63da211ff20a94fb624731843c8f", function(data){
-      var currentTemp = Math.ceil(data.main.temp - 273.15);
-      $("#city-temp").text(currentTemp);
-      $('#city').text(data.name);
-    });
+    $("#choose-city").change(function(){
+      var city = $('#choose-city').val();
+      console.log(city);
+      $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=e4ab63da211ff20a94fb624731843c8f", function(data){
+        var currentCity = data;
+        $("#city-temp").text(Math.ceil(currentCity.main.temp - 273.15));
+        $('#city').text(currentCity.name);
+      });
+    })
 
 
 });
