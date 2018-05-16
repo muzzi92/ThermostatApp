@@ -9,12 +9,14 @@ $( document ).ready(function() {
     $( "#temp").text(thermostat.temperature)
 
     $( "#up" ).click(function(){
-      thermostat.up(1);
+      var number = $('#number').val();
+      thermostat.up(parseInt(number));
       $("#temp").text(thermostat.temperature)
     })
 
     $( "#down" ).click(function(){
-      thermostat.down(1);
+      var number = $('#number').val();
+      thermostat.down(parseInt(number));
       $("#temp").text(thermostat.temperature)
     })
 

@@ -8,7 +8,6 @@ Thermostat.prototype.up = function(number) {
   this.temperature += number;
   if (this.temperature > this.maxTemp ) {
     this.temperature = this.maxTemp;
-    throw "Nelly - 'it\'s getting hot in here'";
   };
 };
 
@@ -16,7 +15,6 @@ Thermostat.prototype.down = function(number) {
   this.temperature -= number;
   if (this.temperature < 10 ) {
     this.temperature = 10;
-    throw "its too cold bro put on a jumper";
   };
 };
 

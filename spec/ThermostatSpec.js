@@ -22,12 +22,8 @@ describe('Thermostat', function(){
       expect(thermostat.temperature).toEqual(10);
     });
 
-    it('raises an error if temp goes below 10', function() {
-      expect(function() { thermostat.down(11) }).toThrow("its too cold bro put on a jumper");
-    });
-
     it('should default to ten if it goes below that', function() {
-      expect(function() { thermostat.down(20) }).toThrow("its too cold bro put on a jumper");
+      thermostat.down(20)
       expect(thermostat.temperature).toEqual(10)
     });
   });
@@ -46,7 +42,7 @@ describe('Thermostat', function(){
       expect(thermostat.isPowerMode).toEqual(true);
     });
     it('when power ranger mode is on max temp is 25', function(){
-      expect(function() { thermostat.up(20) }).toThrow("Nelly - 'it\'s getting hot in here'");
+      thermostat.up(20)
       expect(thermostat.temperature).toEqual(25);
     })
     it('changes the maxTemp when toggle is off',function(){
