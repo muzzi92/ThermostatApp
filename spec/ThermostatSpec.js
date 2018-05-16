@@ -45,15 +45,21 @@ describe('Thermostat', function(){
       thermostat.togglePowerMode();
       expect(thermostat.isPowerMode).toEqual(true);
     });
-
     it('when power ranger mode is on max temp is 25', function(){
       expect(function() { thermostat.up(20) }).toThrow("Nelly - 'it\'s getting hot in here'");
       expect(thermostat.temperature).toEqual(25);
     })
-
     it('changes the maxTemp when toggle is off',function(){
       thermostat.togglePowerMode();
       expect(thermostat.maxTemp).toEqual(32);
+    })
+  });
+
+  describe('reset temperature', function(){
+    it('resets temperature to 20', function(){
+      thermostat.up(2);
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
     })
   });
 });

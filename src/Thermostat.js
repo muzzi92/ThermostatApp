@@ -24,5 +24,9 @@ Thermostat.prototype.togglePowerMode = function() {
   this.isPowerMode = !this.isPowerMode;
   if (this.isPowerMode == true){
     this.maxTemp = 25
-  } else {this.maxTemp = 32} 
+  } else {this.maxTemp = 32}
+};
+
+Thermostat.prototype.reset = function() {
+  this.temperature =20;
 };
