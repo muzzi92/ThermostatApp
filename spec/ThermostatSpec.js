@@ -6,7 +6,14 @@ describe('Thermostat', function(){
 
   describe('temperature', function(){
     it('starts with a temperature of 20', function(){
-      expect(thermostat.temperature.toEqual(20);
+      expect(thermostat.temperature).toEqual(20);
+    });
+  });
+
+  describe('up',function(){
+    it('increases the temperature by the arg', function(){
+      thermostat.up(5);
+      expect(thermostat.temperature).toEqual(25);
     });
   });
 });
