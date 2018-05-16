@@ -1,10 +1,15 @@
 function Thermostat(){
   this.temperature = 20;
   this.isPowerMode = true;
+  this.maxTemp = 25
 };
 
 Thermostat.prototype.up = function(number) {
   this.temperature += number;
+  if (this.temperature > this.maxTemp ) {
+    this.temperature = this.maxTemp;
+    throw "Nelly - 'it\'s getting hot in here'";
+  };
 };
 
 Thermostat.prototype.down = function(number) {
@@ -17,4 +22,7 @@ Thermostat.prototype.down = function(number) {
 
 Thermostat.prototype.togglePowerMode = function() {
   this.isPowerMode = !this.isPowerMode;
+  if (this.isPowerMode == true){
+    this.maxTemp = 25
+  } else {this.maxTemp = 32} 
 };
