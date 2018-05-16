@@ -21,5 +21,15 @@ describe('Thermostat', function(){
       thermostat.down(10);
       expect(thermostat.temperature).toEqual(10);
     })
+
+    it('raises an error if temp goes below 10', function() {
+      expect(function() { thermostat.down(11) }).toThrow("its too cold bro put on a jumper");
+    });
+
+    it('should default to ten if it goes below that', function() {
+      expect(function() { thermostat.down(20) }).toThrow("its too cold bro put on a jumper");
+      expect(thermostat.temperature).toEqual(10)
+
+    });
   })
 });
