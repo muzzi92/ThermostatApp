@@ -62,4 +62,19 @@ describe('Thermostat', function(){
       expect(thermostat.temperature).toEqual(20);
     })
   });
+
+  describe('current usage', function(){
+    it('shows the user if its low usage', function(){
+      thermostat.down(9);
+      expect(thermostat.usage()).toEqual("low usage");
+    });
+    it('shows the user if its medium usage', function(){
+      expect(thermostat.usage()).toEqual("medium usage");
+    });
+    it('shows the user if its high usage', function(){
+      thermostat.togglePowerMode();
+      thermostat.up(6)
+      expect(thermostat.usage()).toEqual("high usage");
+    });
+  })
 });
