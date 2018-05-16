@@ -28,6 +28,9 @@ $( document ).ready(function() {
 
     $( "#up" ).click(function(){
       var number = $('#number').val();
+      if (number.length === 0) {
+        number = 1;
+      }
       thermostat.up(parseInt(number));
       $("#temp").text(thermostat.temperature);
       $("#usage").text(thermostat.usage());
@@ -39,6 +42,9 @@ $( document ).ready(function() {
 
     $( "#down" ).click(function(){
       var number = $('#number').val();
+      if (number.length === 0) {
+        number = 1;
+      }
       thermostat.down(parseInt(number));
       $("#temp").text(thermostat.temperature);
       $("#usage").text(thermostat.usage());
@@ -54,5 +60,12 @@ $( document ).ready(function() {
       $("#usage").text(thermostat.usage());
       UsageColour();
     })
+
+    $.get("http://api.openweathermap.org/data/2.5/weather?id=2643743&APPID=e4ab63da211ff20a94fb624731843c8f", function(data){
+      var currentTemp = Math.ceil(data.main.temp - 273.15);
+      $("#city-temp").text(currentTemp);
+      $('#city').text(data.name);
+    });
+
 
 });

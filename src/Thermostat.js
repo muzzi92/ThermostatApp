@@ -4,7 +4,7 @@ function Thermostat(){
   this.maxTemp = 25
 };
 
-Thermostat.prototype.up = function(number) {
+Thermostat.prototype.up = function(number) {  
   this.temperature += number;
   if (this.temperature > this.maxTemp ) {
     this.temperature = this.maxTemp;
@@ -12,6 +12,7 @@ Thermostat.prototype.up = function(number) {
 };
 
 Thermostat.prototype.down = function(number) {
+
   this.temperature -= number;
   if (this.temperature < 10 ) {
     this.temperature = 10;
