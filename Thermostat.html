@@ -7,6 +7,14 @@
   </head>
   <style media="screen">
 
+    #eco-power {
+      margin-left: 13px;
+    }
+
+    #usage {
+      color: black;
+    }
+
   </style>
   <body>
     <div class="container">
@@ -21,7 +29,7 @@
           <h1> Current Temperature: </h1> <h1 id='temp'></h1>
         </div>
         <div class="col-4 offset-col-1">
-          <h3 id="usage"> Low usage </h3>
+          <h3 id="usage"></h3>
         </div>
       </div>
 
@@ -37,8 +45,11 @@
       </div>
 
       <div class="row">
-        <div class="col-6">
+        <div class="col-1">
           <button id="eco" type="button" name="button" class="btn btn-success">ECO Mode</button>
+        </div>
+        <div class="col-3">
+          <h3 id="eco-power"></h3>
         </div>
       </div>
 
