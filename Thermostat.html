@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Thermostat App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  </head>
+  <style media="screen">
+
+  </style>
+  <body>
+    <div class="container">
+      <div class='row'>
+        <div class='col-12'>
+          <h1 class="text-center"> Welcome To The ThermosTwat </h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <h1 id='temp'> Current Temperature: </h1>
+        </div>
+        <div class="col-4 offset-col-1">
+          <h3 id="usage"> Low usage </h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <form class="form-group" action="index.html" method="post">
+            <label for="change-temp">Change Temperature: </label>
+            <input type="text" class='form-control' name='change-temp'>
+            <button id="up" type="button" name="button" class="btn btn-danger">Turn it up!</button>
+            <button id="down" type="button" name="button" class="btn btn-info">Cool off!</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <button id="eco" type="button" name="button" class="btn btn-success">ECO Mode</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <button id="reset" type="button" name="button" class="btn btn-primary">Reset</button>
+        </div>
+      </div>
+
+    </div>
+
+
+  </body>
+</html>

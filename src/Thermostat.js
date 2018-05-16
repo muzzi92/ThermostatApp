@@ -22,9 +22,11 @@ Thermostat.prototype.down = function(number) {
 
 Thermostat.prototype.togglePowerMode = function() {
   this.isPowerMode = !this.isPowerMode;
-  if (this.isPowerMode == true){
+  if (this.isPowerMode == true) {
     this.maxTemp = 25
-  } else {this.maxTemp = 32}
+  } else {
+    this.maxTemp = 32
+  }
 };
 
 Thermostat.prototype.reset = function() {
@@ -32,9 +34,11 @@ Thermostat.prototype.reset = function() {
 };
 
 Thermostat.prototype.usage = function() {
-  if (this.temperature < 18){
-  return "low usage"}
-  else if (this.temperature < 25){
+  if (this.temperature < 18) {
+    return "low usage"
+  } else if (this.temperature < 25) {
     return "medium usage"
-  } else {return "high usage"}
+  } else {
+    return "high usage"
+  }
 };
