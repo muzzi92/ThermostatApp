@@ -4,19 +4,12 @@
     <meta charset="utf-8">
     <title>Thermostat App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Thermostat.css">
   </head>
-  <style media="screen">
 
-    #eco-power {
-      margin-left: 13px;
-    }
-
-    #usage {
-      color: black;
-    }
-
-  </style>
   <body>
+
+
     <div class="container">
       <div class='row'>
         <div class='col-12'>
@@ -46,10 +39,14 @@
       <div class="row">
         <div class="col-6">
           <form class="form-group" action="index.html" method="post">
-            <label for="change-temp">Change Temperature: </label>
-            <input type="text" id="number" class='form-control' name='change-temp'>
-            <button id="up" type="button" name="button" class="btn btn-danger">Turn it up!</button>
-            <button id="down" type="button" name="button" class="btn btn-info">Cool off!</button>
+            <div class="form-box">
+              <label for="change-temp">Change Temperature: </label>
+              <input type="text" id="number" class='form-control' name='change-temp'>
+            </div>
+            <div class="up-down-buttons">
+              <button id="up" type="button" name="button" class="btn btn-danger">Turn it up!</button>
+              <button id="down" type="button" name="button" class="btn btn-info">Cool off!</button>
+            </div>
           </form>
         </div>
       </div>
@@ -74,5 +71,6 @@
   <script src="src/Thermostat.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="src/doingstuff.js"></script>
+
   </body>
 </html>

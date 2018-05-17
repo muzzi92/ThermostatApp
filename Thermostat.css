@@ -1,0 +1,50 @@
+#eco-power {
+  margin-left: 13px;
+}
+
+body {
+  background-image: url(http://www.planwallpaper.com/static/images/6909249-black-hd-background.jpg);
+  color: white;
+}
+
+button {
+  border: 5px, solid, white;
+}
+
+form {
+  width: 600px;
+}
+
+.form-box {
+  margin: 20px;
+  margin-left: 450px;
+}
+
+label {
+  font-size: 30px;
+  text-align: center;
+}
+
+#number {
+  margin-left: 20px;
+}
+
+.up-down-buttons {
+  margin: auto;
+  margin-left: 475px;
+}
+
+#up {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+#down {
+  width: 120px;
+}
+
+#eco-power {
+  border: 5px solid white;
+  padding: 5px;
+  padding-right: 5px;
+}
