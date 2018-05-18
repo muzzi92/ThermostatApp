@@ -18,13 +18,13 @@
       </div>
 
       <div class="row">
-        <div id="curr-temp" class="col-4">
+        <div id="curr-temp" class="col-3">
           <span> Current Temperature: </span> <span id='temp'></span>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <h3 id="usage"></h3>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <h1 id="city"> </h1> <h1 id='city-temp'></h1>
           <select id="choose-city">
             <option>Choose City</option>
@@ -32,6 +32,11 @@
             <option class="choose" value="london" name="button">London</option>
             <option class="choose" value="New York" name="button">New York</option>
           </select>
+        </div>
+        <div class="col-3">
+          <form action="/sessions/new" method="get">
+            <input type="submit" value="Login">
+          </form>
         </div>
       </div>
 
