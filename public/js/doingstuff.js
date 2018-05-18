@@ -1,12 +1,22 @@
 $( document ).ready(function() {
-  thermostat = new Thermostat();
-  $( "#temp").text(thermostat.temperature)
-  $( "#eco-power" ).text('On')
-  $("#usage").text(thermostat.usage());
-  $.get("http://api.openweathermap.org/data/2.5/weather?q=london&APPID=e4ab63da211ff20a94fb624731843c8f", function(data){
-    $("#city").text(data.name);
-    $("#city-temp").text(Math.ceil(data.main.temp - 273.15));
+
+  var thermostat;
+
+  $.getJSON("http://localhost:9292/thermostat", function(data){
+    console.log(typeof data);
+    thermostat = new Thermostat(data.temperature, data.powersave);
+    $( "#temp").text(thermostat.temperature);
+    $( "#eco-power" ).text('On');
+    $("#usage").text(thermostat.usage());
+    $.get("http://api.openweathermap.org/data/2.5/weather?q=" + data.city + "&APPID=e4ab63da211ff20a94fb624731843c8f", function(data){
+      $("#city").text(data.name);
+      $("#city-temp").text(Math.ceil(data.main.temp - 273.15));
+    });
   });
+
+
+
+
 
     function UsageColour() {
       if (thermostat.usage() === 'low usage') {

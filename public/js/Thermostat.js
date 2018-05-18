@@ -1,10 +1,10 @@
-function Thermostat(){
-  this.temperature = 20;
-  this.isPowerMode = true;
+function Thermostat(temperature = 20, powersave = true){
+  this.temperature = temperature;
+  this.isPowerMode = powersave;
   this.maxTemp = 25
 };
 
-Thermostat.prototype.up = function(number) {  
+Thermostat.prototype.up = function(number) {
   this.temperature += number;
   if (this.temperature > this.maxTemp ) {
     this.temperature = this.maxTemp;

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Thermostat App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Thermostat.css">
+    <link rel="stylesheet" type="text/css" href="css/Thermostat.css">
   </head>
 
   <body>
@@ -18,8 +18,8 @@
       </div>
 
       <div class="row">
-        <div class="col-4">
-          <h1> Current Temperature: </h1> <h1 id='temp'></h1>
+        <div id="curr-temp" class="col-4">
+          <span> Current Temperature: </span> <span id='temp'></span>
         </div>
         <div class="col-4">
           <h3 id="usage"></h3>
@@ -68,9 +68,9 @@
 
     </div>
 
-  <script src="src/Thermostat.js"></script>
+  <script type="text/javascript" src="js/Thermostat.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="src/doingstuff.js"></script>
+  <script type="text/javascript" src="js/doingstuff.js"></script>
 
   </body>
 </html>
