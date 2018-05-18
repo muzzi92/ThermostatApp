@@ -18,4 +18,11 @@ class ThermostatApp < Sinatra::Base
     {temperature: @thermostat.temperature, powersave: @thermostat.power_saving, city: @thermostat.city}.to_json
   end
 
+  post '/thermostat' do
+    @thermostat.temperature = params["temperature"] if params["temperature"]
+    @thermostat.power_saving = params["powersave"] if params["powersave"]
+    @thermostat.city = params["city"] if params["city"]
+    p @thermostat
+  end
+
 end

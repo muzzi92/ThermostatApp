@@ -30,6 +30,7 @@ $( document ).ready(function() {
 
     $( "#eco" ).click(function( event ) {
         thermostat.togglePowerMode();
+        $.post('/thermostat', {powersave: thermostat.isPowerMode});
         $( "#eco-power").text(function(){
           if (thermostat.isPowerMode === true) {
             return 'On';
@@ -47,6 +48,7 @@ $( document ).ready(function() {
       thermostat.up(parseInt(number));
       $("#temp").text(thermostat.temperature);
       $("#usage").text(thermostat.usage());
+      $.post('/thermostat', {temperature: thermostat.temperature});
       UsageColour();
       if (thermostat.temperature == thermostat.maxTemp) {
         alert("Nelly says: It's getting hot in here!");
@@ -60,6 +62,7 @@ $( document ).ready(function() {
       thermostat.down(parseInt(number));
       $("#temp").text(thermostat.temperature);
       $("#usage").text(thermostat.usage());
+      $.post('/thermostat', {temperature: thermostat.temperature});
       UsageColour();
       if (thermostat.temperature == 10) {
         alert("What's cooler than being cool? ICE COOOOLD");
@@ -70,12 +73,14 @@ $( document ).ready(function() {
       thermostat.reset();
       $("#temp").text(thermostat.temperature);
       $("#usage").text(thermostat.usage());
+      $.post('/thermostat', {temperature: thermostat.temperature});
       UsageColour();
     })
 
     $("#choose-city").change(function(){
       var city = $('#choose-city').val();
       console.log(city);
+      $.post('/thermostat', {city: city});
       $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=e4ab63da211ff20a94fb624731843c8f", function(data){
         var currentCity = data;
         $("#city-temp").text(Math.ceil(currentCity.main.temp - 273.15));
